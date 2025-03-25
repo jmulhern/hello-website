@@ -1,0 +1,12 @@
+name: hello-website
+services:
+- name: hello-website
+  environment_slug: node-js
+  instance_size_slug: basic-xxs
+  instance_count: 1
+  github:
+    repo: jmulhern/hello-website
+    branch: main
+    deploy_on_push: true
+  build_command: "npm install --legacy-peer-deps && npm run build"
+  run_command: "npm start"
